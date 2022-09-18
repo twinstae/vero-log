@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>진리의 배 로그 - 2022년 09월 18일 로그</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        <!-- Enable responsiveness on mobile devices-->
+        <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+        <!-- Standard meta tags -->
+        <meta name="author" content="김태희(aka 탐정토끼)">
+        <meta name="description" content="매일매일의 로그를 남기자는 생각은 여러 번 해왔다. 이제 다시 기록하려 한다.">
+
+        <!-- Open Graph Tags -->
+        <meta property="og:site_name" content="진리의 배 로그">
+        
+        <meta property="og:title" content="2022년 09월 18일 로그">
+        <meta property="og:url" content="https://vero-log.com/test">
+        <meta property="og:description" content="매일매일의 로그를 남기자는 생각은 여러 번 해왔다. 이제 다시 기록하려 한다.">
+        
+        <meta property="og:type" content="article">
+        <meta property="article:published_time" content="2022-09-18">
+        
+        <meta property="article:author" content="https:&#x2F;&#x2F;twitter.com&#x2F;stelo_kim">
+        <meta property="article:tags" content="회고">
+        
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://vero-log.com/main.css">
+
+        <!-- Feeds -->
+        
+
+        <!-- Google Analytics -->
+        
+
+        <script>
+            function setTheme() {
+                const time = new Date();
+      
+                const prev = localStorage.getItem('date');
+                const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+      
+                const now = time.getTime();
+                let sunrise;
+                let sunset;
+      
+                function setBodyClass() {
+                    if (now > sunrise && now < sunset) return;
+                    document.body.classList.add('dark');
+                }
+      
+                if (date !== prev) {
+                    fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+                        .then(res => res.json())
+                        .then(data => {
+                            sunrise = data.sunrise.split(':').map(Number);
+                            sunset = data.sunset.split(':').map(Number);
+                    })
+                    .catch(() => {
+                        sunrise = [7, 0];
+                        sunset = [19, 0];
+                    })
+                    .finally(() => {
+                        sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+                        sunset = time.setHours(sunset[0], sunset[1], 0);
+                        setBodyClass();
+                        localStorage.setItem('sunrise', sunrise);
+                        localStorage.setItem('sunset', sunset);
+                    });
+                    localStorage.setItem('date', date);
+                } else {
+                    sunrise = Number(localStorage.getItem('sunrise'));
+                    sunset = Number(localStorage.getItem('sunset'));
+                    setBodyClass();
+                }
+            }
+        </script>
+    </head>
+    
+    <body class="single">
+    
+    <!-- Apply theme -->
+    <script>
+      setTheme();
+    </script>
+
+    
+        <header class="header">
+            <nav class="nav">
+                
+                <p class="logo"><a href="https://vero-log.com">진리의 배 로그</a></p>
+                
+                <ul class="menu">
+                    
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            
+<article class="post-single">
+    <header class="post-header">
+        <h1 class="post-title">2022년 09월 18일 로그</h1>
+        <div class="post-meta">
+            Author: <a class="post-author" href="https://twitter.com/stelo_kim">
+                김태희(aka 탐정토끼)
+            </a>
+            
+            <br/>
+            <span>&middot;</span>
+            <span class="post-reading-time">2 min read</span>
+        </div>
+    </header>
+    <div class="post-content"><p>매일매일의 로그를 남기자는 생각은 여러 번 해왔다. 이제 다시 기록하려 한다.</p>
+<span id="continue-reading"></span><h2 id="alacarigo-sseotaeghaja">알아차리고 선택하자</h2>
+<p>나는 강박적으로 빠져드는 것이 큰 문제라서. 알아차리고 선택하고 행동하지 않으면, 휘둘리게 된다.</p>
+<p>그래서 이렇게 로그와 기록을 남기려고 한다. 나는 충동적으로 길게 쓰는 것도 문제라서. 몰아서 쓰지 않겠다. 하루 종일 켜 놓고 조금씩 자주 쓰려 한다.</p>
+<h2 id="blogwa-ssaroun-log-saiteu">blog와 새로운 log 사이트</h2>
+<p>이 log는 zola로 만들었다. svelte와 elder.js로 된 블로그도 충분히 빠르고 훌륭하지만, rust로 된 zola를 한 번쯤은 써보고 싶었다. zola의 성능이 빛을 발할 수 있도록 많은 기록을 남기고 싶다.</p>
+<p><a href="https://twinstae.github.io">블로그</a>와 달리, 복잡한 설정이나 기능보다는 미니멀하게 가려 한다.</p>
+<blockquote>
+<p>그래도 마크다운이 있으면</p>
+</blockquote>
+<ul>
+<li>이런저런</li>
+</ul>
+<ol>
+<li>마크업이 어떻게 렌더되는지
+궁금하긴 하더라</li>
+</ol>
+<h2 id="hyanjjeoin-deiteodo-unagigo-ssida">양적인 데이터도 남기고 싶다</h2>
+<p>로그에는 양적인 데이터를 남기고 싶다. 일단 마음과 수면과 운동이다. 질적인 기록도 같이 첨부해서, 내 패턴을 추적하면 좋겠다.</p>
+<h3 id="maheu">마음</h3>
+<p>기분의 변화 흐름. 다루고 싶은 주제와 고민. 결정과 행동, 그리고 결과.</p>
+<h3 id="sumyeon">수면</h3>
+<p>수면 일지다. 몇 시에 자고 몇 시에 일어났는지. 약은 잘 챙겨 먹었는지. 특히 약을 잘 챙겨먹는 게 중요하다.</p>
+<h3 id="unddon">운동</h3>
+<p>꾸준히 조금씩이라도. 무엇을 얼마나 했는지.</p>
+<h2 id="ilil-giroggwa-jujebbyeo-girog">일일 기록과 주제별 기록</h2>
+<p>시간을 중심으로 한 일일 기록도 있겠지만. 하나의 주제를 이어가는 기록도 있다. 블로그와는 달리, 그저 기록하는 용도로. 아마 트위터에도 올리고 여기에도 올리겠지 싶다. 책을 읽는 것도, 코딩을 하는 것도.</p>
+<h2 id="ggeraesse-oneulheu-ggeuheu-sseossda">그래서 오늘은 글을 썼다.</h2>
+<p>어제는 늦게 잤다. 밤에 울었다. 늦게 일어나서 점심을 먹었다. 그래도 약은 점심에 먹었고, 자기 전에도 먹을 건데. 일찍 일어나서 아침을 먹고 약도 먹어야지.</p>
+<p>운동은 하지 않았다. 산책을 하고, 근력 운동을 하고 자세를 바르게 하자는 3가지 목표가 있다. 내일은 구체적인 행동 목표를 정해야겠다.</p>
+<p>웹 접근성 표준에 대해서 각잡고 공부를 해야겠다. 밀린 책들을 읽거나, rust나 golang, elixir를 공부하는 등... 하고 싶은 건 많다.</p>
+<p>그래도 마음은 좀 나아졌다. 테스트에 대한 글을 써서 그렇다. 나도 점점 더 많이 배우고 성장하는 걸 느낀다. 이제 스크린리더로 핸드폰을 쓸 수 있다.</p>
+<p>하고 있는 게 많다. 역량 배지도 만들고 있고, 프메 백업 뷰어도 만들고. 블로그에 글도 쓴다. 내가 어떤 가치를 추구하는지. 늘 생각하고 결정을 내리고, 포기할 건 포기해야 한다.</p>
+<p>GTD를 하자. 수집을 하고 결정을 내리고. 미루자. 모든 걸 할 순 없으니까. 조금씩 하나하나 해나가자. 내일은 로그에 다음 행동을 적겠다.</p>
+</div>
+</article>
+
+        </main>
+
+        <footer class="footer">
+            <span>&copy; 2022 <a href="https://vero-log.com">진리의 배 로그</a></span>
+            <span>&middot;</span>
+            <span>Powered by <a href="https://www.getzola.org" rel="noopener" target="_blank">Zola</a>️</span>
+            <span>&middot;</span>
+            <span>Theme️ <a href="https://github.com/schoenenberg/zola-paper" rel="noopener" target="_blank">Zola-Paper</a></span>
+        </footer>
+    
+    </body>
+</html>
