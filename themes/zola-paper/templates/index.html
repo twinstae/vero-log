@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% if page.date %}{{ config.title }} - {{ page.date | date(format="%Y년 %m월 %d일 로그") }}{% else %}{{ config.title }}{% endif %}</title>
+        <title>{% if page.title %}{{ config.title }} - {{ page.title }}{% else %}{{ config.title }}{% endif %}</title>
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -19,7 +19,7 @@
         <!-- Open Graph Tags -->
         <meta property="og:site_name" content="{{ config.title }}">
         {% if page %}
-        <meta property="og:title" content="{{ page.date | date(format="%Y년 %m월 %d일 로그") }}">
+        <meta property="og:title" content="{{ page.title }}">
         <meta property="og:url" content="{{ get_url(path=page.path, trailing_slash=false) }}">
         <meta property="og:description" content="{{ page.summary | markdown(inline=true) }}">
         {% if page.extra.banner_path %}
@@ -129,7 +129,7 @@
                 {% elif section is defined %}
                     {% set pages = section.pages %}
                 {% endif %}
-                {% for page in pages %}
+                {% for page in pages | sort(attribute="date") | reverse %}
                 {% if loop.index == 1 and is_first_page %}
                 <article class="first-entry">{% else %}<article class="post-entry">{% endif %}
                 {{ post_macros::page_in_list(page=page)}}
