@@ -1,6 +1,10 @@
 # The URL the site will be built for
-base_url = "https://vero-log-twinstae.vercel.app/"
+base_url = "https://vero-log.vercel.app/"
 
 theme = "zola-paper"
 
 title = "진리의 배 로그"
+
+taxonomies = [
+    { name = "tags", feed = true},
+]

@@ -18,5 +18,14 @@
         </div>
     </header>
     <div class="post-content">{{ page.content | safe }}</div>
+    <footer class="post-footer">
+        {% if page.taxonomies.tags %}
+        <ul class="post-tags">
+        {% for tag in page.taxonomies.tags %}
+            <li><a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </footer>
 </article>
 {% endblock content %}
