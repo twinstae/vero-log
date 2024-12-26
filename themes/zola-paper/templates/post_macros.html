@@ -6,7 +6,9 @@
                         {{ page.summary | safe }}
                     </section>{% endif %}
                     <footer class="entry-footer">
-                        <time>{{ page.date | date(format="%B %e, %Y") }}</time>
+                        <time>{{ page.date | date(format="%Y년 %m월 %d일") }}</time>
+												&middot;
+												<span class="post-reading-time">읽는 시간: {{ page.reading_time }} 분</span>
                     </footer>
                     <a class="entry-link" href="{{ page.permalink }}"></a>
 {% endmacro page_in_list %}

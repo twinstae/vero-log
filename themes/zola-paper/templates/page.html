@@ -5,16 +5,16 @@
     <header class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
         <div class="post-meta">
-            {% if page.extra.author_url %}Author: <a class="post-author" href="{{ page.extra.author_url | safe }}">
+            {% if page.extra.author_url %}글쓴이: <a class="post-author" href="{{ page.extra.author_url | safe }}">
                 {{ page.extra.author }}
             </a>
             {% else %}<span class="post-author">
-                Author: {{ page.extra.author }}
+                글쓴이: {{ page.extra.author }}
             </span>{% endif %}
             <br/>
             <span>{{ page.date | date(format="%Y년 %m월 %d일") }}</span>
             <span>&middot;</span>
-            <span class="post-reading-time">{{ page.reading_time }} min read</span>
+            <span class="post-reading-time">읽는 시간: {{ page.reading_time }} 분</span>
         </div>
     </header>
     <div class="post-content">{{ page.content | safe }}</div>
